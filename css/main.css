@@ -11,6 +11,7 @@
 3.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
         - Framework
 4.0 - Components: specific designed components
+        - Header
 5.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
         - screen reader
         - alignment	    
@@ -34,10 +35,14 @@
 }
 
 html {
+        font-size: .85rem;
         
 }
 
 @media screen and (min-width: 768px) {
+        html {
+                font-size: 1rem;
+        }
 
 }
 
@@ -49,7 +54,14 @@ html {
    2.0 - ELEMENTS
 -------------------------------------------------------------- */
 
+h1 {
+        font-size: 2rem;
+        margin: 2.5em 0 .25em;
+}
 
+p {
+        line-height: 1em;
+}
 @media screen and (min-width: 768px) {
 
 }
@@ -278,7 +290,50 @@ html {
 
 
 
+/* ----- Header----- */
 
+#home {
+        text-align: center;
+}
+
+#home p:last-child {
+        display: inline-block;
+        position: relative;
+        top: 0;
+        left: 0;
+
+}
+
+#home p:last-child::before,
+#home p:last-child::after {
+        content: '';
+        width: 20px;
+        height: 5px;
+        background-color: green;
+        display: block;
+        position: absolute;
+        top: 7px;
+        
+}
+
+#home p:last-child::before {
+        left: -30px;
+
+}
+
+#home p:last-child::after {
+        right: -30px;
+
+}
+
+/* ----- Nav----- */
+
+nav ul {
+        list-style-type: none;
+}
+ nav li {
+        display: inline-block;
+ }
 
 
 
