@@ -3,26 +3,43 @@
 /*--------------------------------------------------------------
     TABLE OF CONTENTS:
 ----------------------------------------------------------------
-
-1.0 - Generic: reset and/or normalize styles, box-sizing definition, etc. 
+1.0 - Settings: used with preprocessors and contain font, colors definitions, etc.
+2.0 - Tools: globally used mixins and functions. Use for preprocessor only.
+3.0 - Generic: reset and/or normalize styles, box-sizing definition, etc.
         - Universal
-2.0 - Elements: styling for bare/generic HTML elements 
+4.0 - Elements: styling for bare/generic HTML elements 
+        -typograhpy
         
-3.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
+5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
         - Framework
-4.0 - Components: specific designed components
+6.0 - Components: specific designed components
         - Header
-5.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+        - nav 
+7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
         - screen reader
-        - alignment	    
+        - alignment	 
+    
 --------------------------------------------------------------*/
 
 
 /*--------------------------------------------------------------
-    1.0 - GENERTIC
+    1.0 - SETTING
+-------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+    2.0 - TOOL
+-------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+    3.0 - GENERTIC
 -------------------------------------------------------------- */
 
 /* ----- universal ----- */
+
+* {
+        font-family: 'Source Sans Pro', sans-serif;
+        line-height: 1.5em;
+}
 
 *,
 *:after,
@@ -51,17 +68,66 @@ html {
 }
 
 /*--------------------------------------------------------------
-   2.0 - ELEMENTS
+   4.0 - ELEMENTS
 -------------------------------------------------------------- */
 
+
+/* ----- typography---- */
+
 h1 {
-        font-size: 2rem;
-        margin: 2.5em 0 .25em;
+        font-size: 3rem;
+        margin: 2.5em 0 0;
 }
 
-p {
-        line-height: 1em;
+h2 {
+        color: #1EA78D;
+        display: inline-block;
+        border-bottom: #717982 solid 1px;
+        padding: 20px;
+        text-transform: uppercase;
 }
+
+h3 {
+        color:  #1E1E1E;
+}
+
+#home p {
+        margin: 0; 
+
+}
+
+#home p:first-of-type {
+        font-weight: 300;
+        font-size: 2rem;
+           
+}
+
+#home p:last-child {
+        margin-bottom: 5em;
+}
+
+span {
+        color: #1EA78D;
+}
+
+#features p {
+        color: #717982;
+        margin: 0;
+}
+
+#features p,
+footer p,
+li {
+        font-size: .7rem;
+}
+
+#work p {
+        color: #717982;
+        font-weight: 700;
+        font-size: 1rem;    
+}
+
+
 @media screen and (min-width: 768px) {
 
 }
@@ -73,7 +139,7 @@ p {
 
 
 /*--------------------------------------------------------------
-    3.0 - OBJECTS
+    5.0 - OBJECTS
 -------------------------------------------------------------- */
 
 /* ----- Framework ----- */
@@ -285,15 +351,52 @@ p {
 
 
   /*--------------------------------------------------------------
-  4.0 - COMPONENTS
+  6.0 - COMPONENTS
 -------------------------------------------------------------- */
 
+/* ----- Nav----- */
+
+ul {
+        list-style-type: none;
+        padding: 0;
+}
+
+li {
+        display: inline-block;
+        padding-left: 1rem;
+
+ }
+
+a {
+        text-decoration: none;
+}
 
 
 /* ----- Header----- */
 
+#work,
+#home,
+#features header {
+        text-align: center; 
+}
+
+#home ,
+footer,
+#home a {
+        color: #FFFFFF;
+}
+
 #home {
+        background-color: #104F41;
         text-align: center;
+}
+
+#home > div:first-child {
+        background-color: #10443F;
+}
+
+#home .row div:first-child {
+        text-align: left;
 }
 
 #home p:last-child {
@@ -326,20 +429,40 @@ p {
 
 }
 
-/* ----- Nav----- */
-
-nav ul {
-        list-style-type: none;
+@media screen and (min-width: 768px) {
+        ul {
+                text-align: right;
+        }
 }
- nav li {
-        display: inline-block;
- }
+
+@media screen and (min-width: 1024px) {
+}
+
+/* ----- main---- */
+
+#features {
+        background-color: #F4F7F9;
+}
+
+/* ----- footer----- */
+
+
+footer {
+        background-color: #1EA78D;
+        border-top: #10443F solid 4px;
+        padding: 2em 0;
+        margin-top: 3em;
+}
+
+
+
+
 
 
 
 
 /*--------------------------------------------------------------
-   5.0 - UTILITY
+   7.0 - UTILITY
 -------------------------------------------------------------- */
 
 /* ----- Screen reader ----- */
@@ -363,6 +486,10 @@ nav ul {
   .col-center {
         justify-content: center;
 }
+
+
+
+
 
  
 
